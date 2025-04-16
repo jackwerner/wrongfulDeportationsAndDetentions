@@ -298,7 +298,7 @@ if __name__ == "__main__":
     existing_docket_numbers, existing_cases_data = load_existing_cases(csv_path)
     
     # Set fetch_full_text=True to get the full text of each case
-    cases = search_courtlistener(fetch_full_text=False, max_pages=2)
+    cases = search_courtlistener(fetch_full_text=False, max_pages=10)
     
     # Create a list to store analyzed cases
     analyzed_cases = []
