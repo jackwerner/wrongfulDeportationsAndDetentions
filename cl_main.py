@@ -159,7 +159,7 @@ filtered_cases = group_related_cases(filtered_base)
 # Dashboard metrics
 st.header("Case Statistics")
 st.caption("Note: Statistics grouped by person")
-metric_cols = st.columns(4)
+metric_cols = st.columns(3)
 
 with metric_cols[0]:
     st.metric("Total Wrongful Cases", len(grouped_cases['case_group'].unique()))
@@ -171,12 +171,6 @@ with metric_cols[1]:
 with metric_cols[2]:
     detention_groups = grouped_cases[grouped_cases['wrongful_detention'] == True]['case_group'].unique()
     st.metric("Wrongful Detention", len(detention_groups))
-
-with metric_cols[3]:
-    both_groups = grouped_cases[(grouped_cases['wrongful_deportation'] == True) & 
-                            (grouped_cases['wrongful_detention'] == True)]['case_group'].unique()
-    st.metric("Both Deportation & Detention", len(both_groups))
-
 
 # Case details by case group
 st.subheader("Case Details")
